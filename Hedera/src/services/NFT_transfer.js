@@ -53,13 +53,19 @@ async function associateToken(tokenId, accountId, accountPrivateKey) {
     console.log("-----------------------------------");
 }
 
-async function main() {
-    const tokenId = "0.0.7728599";
+async function NFT_transfer(tokenId,secondAccountIdd,secondPrivateKeyy) {
+    //const tokenId = "0.0.7728599";
+    const secondPrivateKeyyy =PrivateKey.fromStringDer(
+        secondPrivateKeyy
+    );
     const nftId = new NftId(TokenId.fromString(tokenId), 2);
     console.log(nftId);
     await nftInfoQuery(nftId);
-    await associateToken(tokenId, secondAccountId, secondPrivateKey);
-    await transferNFT(myAccountId, secondAccountId, nftId);
+    await associateToken(tokenId, secondAccountIdd, secondPrivateKeyyy);
+    await transferNFT(myAccountId, secondAccountIdd, nftId);
     await nftInfoQuery(nftId);
 }
 //main();
+module.exports = {
+    NFT_transfer,
+};

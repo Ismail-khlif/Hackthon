@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-// Import the functions from your script
 const {
     createMultipleAccounts,
     createAccount,
@@ -36,8 +35,8 @@ router.get('/transfer-funds', async (req, res) => {
         const senderPrivateKey = req.query.senderPrivateKey;
         const receiverId = req.query.receiverId;
         const amount = req.query.amount;
-        await transferFunds(senderId, senderPrivateKey, receiverId, amount);
-        res.json({ message: "Funds transferred successfully" });
+        const transferFund= await transferFunds(senderId, senderPrivateKey, receiverId, amount);
+        res.json({ message: "Funds transferred successfully" ,transferFund});
     } catch (error) {
         console.error("Error transferring funds:", error);
         res.status(500).json({ error: "Failed to transfer funds" });

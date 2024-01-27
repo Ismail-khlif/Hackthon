@@ -112,7 +112,7 @@ async function transferFunds(senderId, senderPrivateKey, receiverId,amount) {
         accountBalancee.hbars.toTinybars() +
         " tinybars."
     );
-    return
+    return { senderId, senderBalance: accountBalanceea.hbars.toTinybars() };
 }
 
 async function main() {
@@ -128,7 +128,6 @@ async function main() {
 
     // Perform transactions between the accounts
     await transferFunds(numValue, pk, process.env.MY_ACCOUNT_ID,700);
-   // await transferFunds(numValue1, pk1, process.env.MY_ACCOUNT_ID);
 }
 
 //main();

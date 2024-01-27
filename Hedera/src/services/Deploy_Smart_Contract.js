@@ -132,3 +132,7 @@ console.log("The updated contract message: " + message2);
 
 }
 //main();
+module.exports = {
+main,
+
+};

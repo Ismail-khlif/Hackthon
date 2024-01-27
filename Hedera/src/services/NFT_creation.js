@@ -39,7 +39,6 @@ async function createNFT() {
     let tokenCreateRx = await tokenCreateSubmit.getReceipt(client);
     let tokenId = tokenCreateRx.tokenId;
     console.log(`- Created token with ID: ${tokenId}`);
-    console.log("-----------------------------------");
     return tokenId;
 }
 
@@ -48,7 +47,6 @@ async function queryTokenInfo(tokenId) {
     const query = new TokenInfoQuery().setTokenId(tokenId);
     const tokenInfo = await query.execute(client);
     console.log(JSON.stringify(tokenInfo, null, 4));
-    console.log("-----------------------------------");
 }
 
 async function queryAccountBalance(accountId) {
@@ -56,12 +54,10 @@ async function queryAccountBalance(accountId) {
     const balanceQuery = new AccountBalanceQuery().setAccountId(accountId);
     const accountBalance = await balanceQuery.execute(client);
     console.log(JSON.stringify(accountBalance, null, 4));
-    console.log("-----------------------------------");
 }
 
 async function mintNFT(tokenId) {
     console.log("MintNFT--------------------------");
-
     // Mint new NFT
     let mintTx = await new TokenMintTransaction()
         .setTokenId(tokenId)
@@ -75,11 +71,9 @@ async function mintNFT(tokenId) {
     let mintRx = await mintTx.getReceipt(client);
     //Log the serial number
     console.log(`- Created NFT ${tokenId} with serial: ${mintRx.serials} \n`);
-
-    console.log("-----------------------------------");
 }
 
-async function main() {
+async function NFT_creation() {
     const tokenId = await createNFT();
     await queryTokenInfo(tokenId);
     await queryAccountBalance(myAccountId);
@@ -87,3 +81,6 @@ async function main() {
     await queryAccountBalance(myAccountId);
 }
 //main();
+module.exports = {
+    NFT_creation
+};
