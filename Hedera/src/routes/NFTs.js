@@ -8,7 +8,7 @@ const {
 const {
     NFT_transfer
 } = require('../services/NFT_transfer'); 
-
+// http://localhost:3000/NFTs/transfer-NFT
 router.get('/create-NFT', async (req, res) => {
     try {
         const newNFT = await NFT_creation();
@@ -18,7 +18,7 @@ router.get('/create-NFT', async (req, res) => {
         res.status(500).json({ error: "Failed to create NFT" });
     }
 });
-
+// http://localhost:3000/users/transfer-funds
 router.get('/transfer-NFT', async (req, res) => {
     try {
         const tokenId = req.query.TokenId ; 

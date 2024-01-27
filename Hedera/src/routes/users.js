@@ -18,7 +18,7 @@ router.get('/create-multiple-accounts', async (req, res) => {
         res.status(500).json({ error: "Failed to create accounts" });
     }
 });
-
+// http://localhost:3000/users/create-account
 router.get('/create-account', async (req, res) => {
     try {
         const newAccount = await createAccount();
@@ -28,7 +28,7 @@ router.get('/create-account', async (req, res) => {
         res.status(500).json({ error: "Failed to create account" });
     }
 });
-
+// http://localhost:3000/users/transfer-funds
 router.get('/transfer-funds', async (req, res) => {
     try {
         const senderId = req.query.senderId;
