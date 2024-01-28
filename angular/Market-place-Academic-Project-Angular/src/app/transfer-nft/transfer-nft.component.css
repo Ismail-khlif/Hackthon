@@ -1,0 +1,16 @@
+/* Add these styles to your existing CSS */
+.container {
+  background-color: rgba(0, 0, 0, 0.5); /* Add semi-transparent black background to container */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.form-group label,
+.btn {
+  color: #fff; /* Set text color to white */
+}
+
+.form-control {
+  background-color: rgba(255, 255, 255, 0.7); /* Add semi-transparent white background to form controls */
+  color: #000; /* Set text color to black */
+}

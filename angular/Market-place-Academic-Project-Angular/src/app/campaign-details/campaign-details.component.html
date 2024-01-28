@@ -1,0 +1,16 @@
+<!-- campaign-details.component.html -->
+<div class="container mt-5" *ngIf="campaign">
+  <div class="card">
+    <img class="card-img-top" [src]="campaign.image" [alt]="campaign.title">
+    <div class="card-body">
+      <h1 class="card-title">{{ campaign.title }}</h1>
+      <p class="card-text">{{ campaign.description }}</p>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>Target:</strong> {{ campaign.target }}</li>
+        <li class="list-group-item"><strong>Deadline:</strong> {{ campaign.deadline | date }}</li>
+        <li class="list-group-item"><strong>Amount Collected:</strong> {{ campaign.amountCollected }}</li>
+      </ul>
+      <button class="btn btn-primary mt-3" (click)="goBack()">Back to Campaign List</button>
+    </div>
+  </div>
+</div>

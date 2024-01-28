@@ -1,0 +1,33 @@
+<!-- create-campaign.component.html -->
+<body>
+<div class="container mt-5">
+  <h1 class="text-light">Create Campaign</h1>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label class="text-light">Title:</label>
+      <input type="text" class="form-control" [(ngModel)]="title" name="title" required>
+    </div>
+    <div class="form-group">
+      <label class="text-light">Description:</label>
+      <textarea class="form-control" [(ngModel)]="description" name="description" required></textarea>
+    </div>
+    <div class="form-group">
+      <label class="text-light">Target (TinyBar):</label>
+      <input type="number" class="form-control" [(ngModel)]="target" name="target" required>
+    </div>
+    <div class="form-group">
+      <label class="text-light">Deadline:</label>
+      <input type="date" class="form-control" [(ngModel)]="deadline" name="deadline" required>
+    </div>
+    <div class="form-group">
+      <label class="text-light">Image URL:</label>
+      <input type="text" class="form-control" [(ngModel)]="image" name="image" required>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-outline-warning">Create Campaign</button>
+      <button  routerLink="/campaigns" class="btn btn-outline-warning">Back</button>
+    </div>
+
+  </form>
+</div>
+</body>

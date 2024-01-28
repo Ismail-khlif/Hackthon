@@ -1,0 +1,26 @@
+<!-- create-campaign.component.html -->
+<body>
+<div class="container mt-5">
+  <h1 class="text-light">Transfer NFT</h1>
+  <form (ngSubmit)="onSubmit()" >
+    <div class="form-group">
+      <label class="text-light">Token Id :</label>
+      <input type="text" class="form-control" [(ngModel)]="tokenId" name="title" required>
+    </div>
+    <div class="form-group">
+      <label class="text-light">Sender Id :</label>
+      <textarea class="form-control"  [(ngModel)]="senderId" name="description" required></textarea>
+    </div>
+    <div class="form-group">
+      <label class="text-light">Private Key :</label>
+      <input type="number" class="form-control" [(ngModel)]="privatekey" name="target" required>
+    </div>
+
+    <div>
+      <button type="submit" class="btn btn-outline-warning">Transfer NFT</button>
+      <button  routerLink="/campaigns" class="btn btn-outline-warning">Back</button>
+    </div>
+
+  </form>
+</div>
+</body>

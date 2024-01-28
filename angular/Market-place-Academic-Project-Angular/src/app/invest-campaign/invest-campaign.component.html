@@ -1,0 +1,30 @@
+<!-- create-campaign.component.html -->
+<body>
+<div class="container mt-5">
+  <h1 class="text-light">Invest In Campaign</h1>
+  <form (ngSubmit)="onSubmit()" >
+    <div class="form-group">
+      <label class="text-light">Campaign Id :</label>
+      <input type="text" class="form-control"  name="title" required>
+    </div>
+    <div class="form-group">
+      <label class="text-light">My Id :</label>
+      <textarea class="form-control"  [(ngModel)]="senderId" name="description" required></textarea>
+    </div>
+    <div class="form-group">
+      <label class="text-light">My private Key :</label>
+      <input type="number" class="form-control" [(ngModel)]="privatekey" name="target" required>
+    </div>
+
+    <div class="form-group">
+      <label class="text-light">Amount In Tinybar:</label>
+      <input type="text" class="form-control" [(ngModel)]="amount"   name="image" required>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-outline-warning">Invest In Campaign</button>
+      <button  routerLink="/campaigns" class="btn btn-outline-warning">Back</button>
+    </div>
+
+  </form>
+</div>
+</body>
